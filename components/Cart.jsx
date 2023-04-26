@@ -1,31 +1,39 @@
-import Image from "next/image";
-import { useCartContext } from "../ctx/cartContext"
-import { AiOutlineClose } from "react-icons/ai";
-import axios from "axios";
-import { loadStripe } from "@stripe/stripe-js";
+import { loadStripe } from '@stripe/stripe-js'
+import axios from 'axios'
+import Image from 'next/image'
+import React from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
+import { useCartContext } from '../ctx/cartContext'
 
 const Cart = () => {
-  const { cartItems, removeCartItem } = useCartContext();
-  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+  const {cartItems, removeCartItem} = useCartContext()
+  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+  
 
-  const handleCheckOut = async() => { 
-    const lineItems = cartItems.map((item) => { 
+  const handleCheckout = async() => {
+
+     const lineItems = cartItems.map((item) => {
       return {
         price_data: {
-          currency: "eur",
+          currency: 'eur',
           product_data: {
             name: item.name
           },
-          unit_amount: item.price * 100
+          unit_amount: item.price * 100 // because stripe interprets price in cents
         },
         quantity: item.quantity
       }
-    })
-    const {data} = await axios.post("http://localhost:3000/api/checkout", { lineItems });
-    const stripe = await stripePromise;
+     })
 
-    await stripe.redirectToCheckout({sessionId: data.id})
+     const { data } = await axios.post("http://localhost:3000/api/checkout", {
+       lineItems,
+     });
+
+     const stripe = await stripePromise
+
+     await stripe.redirectToCheckout({sessionId: data.id})
   }
+
   return (
     <div className="min-w-[275px] h-full px-3 py-6 bg-white text-[#333] rounded-lg shadow-lg cursor-pointer">
       <div>
@@ -61,7 +69,7 @@ const Cart = () => {
         </span>
         <span
           className="block max-w-max mt-8 px-6 py-1 bg-orange-500 text-[#efefef] rounded-lg"
-          onClick={handleCheckOut}
+          onClick={handleCheckout}
         >
           Checkout
         </span>
@@ -69,4 +77,5 @@ const Cart = () => {
     </div>
   );
 }
+
 export default Cart

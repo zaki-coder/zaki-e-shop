@@ -1,7 +1,9 @@
-import Image from "next/image"
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 
 const ProductItem = ({ product }) => {
+  
   return (
     <Link
       href={`/product/${product._id}`}
@@ -9,7 +11,7 @@ const ProductItem = ({ product }) => {
     >
       <div>
         <div>
-          <Image src={product.image} width="500" height="500" />
+          <Image src={product.image} width="500" height="500" alt="" />
         </div>
         <div className="flex items-center justify-center flex-col gap-2">
           <h3 className="text-orange-500 text-2xl capitalize mt-4">
@@ -22,4 +24,5 @@ const ProductItem = ({ product }) => {
     </Link>
   );
 }
+
 export default ProductItem

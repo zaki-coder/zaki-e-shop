@@ -9,8 +9,8 @@ export default async function handler(req, res){
               line_items: req.body.lineItems,
               mode: "payment",
               payment_method_types: ["card"],
-              success_url: "zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app/success",
-              cancel_url: "zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app/",
+              success_url: "https://zaki-e-shop.vercel.app/success",
+              cancel_url: "https://zaki-e-shop.vercel.app/",
             });
 
             return res.status(201).json(session)

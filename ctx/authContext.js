@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
         e.preventDefault()
         try {
             const { data } = await axios.post(
-              "zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app/api/auth/register",
+              "https://zaki-e-shop.vercel.app/api/auth/register",
               userData
             );
             setUser(data.others)
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
         e.preventDefault()
         try {
             const { data } = await axios.post(
-              "zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app/api/auth/login",
+              "https://zaki-e-shop.vercel.app/api/auth/login",
               userData
             );
             console.log(data, 'LOGIN')

@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Link of the ecommerce project: zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app
+
 ## Getting Started
 
 First, run the development server:

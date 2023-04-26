@@ -32,7 +32,9 @@ export default function Home({ featuredProducts }) {
 
 
 export async function getServerSideProps(){
-  const { data } = await axios.get(`http://localhost:3000/api/products`);
+  const { data } = await axios.get(
+    `zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app/api/products`
+  );
 
   return {
     props: {

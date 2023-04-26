@@ -95,7 +95,7 @@ export async function getServerSideProps(ctx) {
     const id = ctx.params.id
 
     const { data: product } = await axios.get(
-      `http://localhost:3000/api/products/${id}`
+      `zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app/api/products/${id}`
     );
 
     return {

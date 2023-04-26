@@ -25,9 +25,12 @@ const Cart = () => {
       }
      })
 
-     const { data } = await axios.post("http://localhost:3000/api/checkout", {
-       lineItems,
-     });
+     const { data } = await axios.post(
+       "zaki-e-shop-af2m6zsns-zakiazizi1841992.vercel.app/api/checkout",
+       {
+         lineItems,
+       }
+     );
 
      const stripe = await stripePromise
 

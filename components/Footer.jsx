@@ -14,9 +14,9 @@ const Footer = () => {
         {/* column */}
         <div className='flex flex-col gap-4'>
           <h2 className='text-2xl mb-8 text-orange-600'>Contacts</h2>
-          <span>YouTube: WebDevMania</span>
-          <span>YouTube: WebDevMania</span>
-          <span>YouTube: WebDevMania</span>
+          <span>YouTube: Zaki-Azizi</span>
+          <span>Instagram: Zaki-Azizi</span>
+          <span>Facebook: Zaki-Azizi</span>
         </div>
         {/* column */}
         <div className='flex flex-col gap-4'>

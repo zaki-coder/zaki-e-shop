@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className='h-full w-10/12 my-auto flex justify-between items-center'>
                 {/* left */}
                 <h2 className='text-3xl'>
-                    <Link href='/'>WebDevMania</Link>
+                    <Link href='/'>Zaki</Link>
                 </h2>
                 {/* center */}
                 <ul className='flex justify-center items-center gap-6 text-[#efefef] text-[18px]'>
